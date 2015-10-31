@@ -1,5 +1,5 @@
 
-public class kNN_Element {
+public class CRX {
 	private String A1;
 	private Double A2;
 	private Double A3;
@@ -17,7 +17,7 @@ public class kNN_Element {
 	private Double A15;
 	private String Label;
 	
-	public kNN_Element(String[] fields){
+	public CRX(String[] fields){
 		A1=(fields[0]);
 		A2=Double.valueOf(fields[1]);
 		A3=Double.valueOf(fields[2]);
@@ -164,7 +164,7 @@ public class kNN_Element {
 		Label = label;
 	}
 	
-	public double L2_Distance(kNN_Element e1){
+	public double L2_Distance(CRX e1){
 		
 		return Math.sqrt(
 				// Distance between Categorical / Binary Data
@@ -187,5 +187,10 @@ public class kNN_Element {
 				Math.pow(e1.getA15()-this.A15,2));
 	}
 	
+	public String toString(){
+		return "{"+ this.A1 + ", "+ this.A2 + ", "+ this.A3 + ", "+ this.A4 + ", "+ this.A5 + ", "
+				+ this.A6 + ", "+ this.A7 + ", "+ this.A8 + ", "+ this.A9 + ", "+ this.A10 + ", "
+				+ this.A11 + ", "+ this.A12 + ", "+ this.A13 + ", "+ this.A14 + ", "+ this.A15 + this.Label +"}";
+	}
 
 }

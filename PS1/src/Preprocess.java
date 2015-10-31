@@ -22,8 +22,8 @@ public class Preprocess {
 	// for label conditioning
 	final static int NEGATIVE = 0;
 	final static int POSITIVE = 1;
-	final static String testing_file = "src/crx.data.testing";
-	final static String training_file = "src/crx.data.training";
+	//final static String testing_file = "src/crx.data.testing";
+	//final static String training_file = "src/crx.data.training";
 	
 	public static void main(String[] args) throws Exception {
 
@@ -47,8 +47,8 @@ public class Preprocess {
 		double[] A15 = new double[8];
 		
 		// read in all of the 
-		//BufferedReader br = new BufferedReader(new FileReader(args[0]));
-		BufferedReader br = new BufferedReader(new FileReader(training_file));
+		BufferedReader br = new BufferedReader(new FileReader(args[0]));
+		//BufferedReader br = new BufferedReader(new FileReader(training_file));
 		
 		String line = null;
 		while ((line = br.readLine()) != null) {
@@ -110,10 +110,10 @@ public class Preprocess {
 		}
 		*/
 		
-		//processFile(args[0], plurality, mean, scaling);
-		//processFile(args[1], plurality, mean, scaling);
-		processFile(training_file, plurality, mean, scaling);
-		processFile(testing_file, plurality, mean, scaling);
+		processFile(args[0], plurality, mean, scaling);
+		processFile(args[1], plurality, mean, scaling);
+		//processFile(training_file, plurality, mean, scaling);
+		//processFile(testing_file, plurality, mean, scaling);
 	}
 	
 	final static void processFile(String file, String[][] plurality, 
